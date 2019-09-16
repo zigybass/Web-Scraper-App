@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cheerio = require("cheerio");
 const axios = require("axios");
+const Article = require("./models/Articles")
 
 const app = express();
 const PORT = process.argv.PORT || 5050;
@@ -21,18 +22,32 @@ db.on("error", console.error.bind(console, "connection error:"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-axios.get("https://www.motortrend.com/").then(data => {
+const articles = [];
+axios.get("https://www.caranddriver.com/news/").then(data => {
   const $ = cheerio.load(data.data);
-  
+  const titles = $(".item-title")
+  $('.item-title').each(i => {
+      const {data: title} = titles[i].children[0]
+      const {href: url} = titles[i].attribs;
+      console.log(articles);
+      const article = new Article({ [title]: url});
+      article.save( err => {
+          if (err) return console.log(err)
+      })
 
-  console.log(data.data);
+    //   articles.model("Article", );
+    //   articles.save((err, articles) => {
+    //       if (err) return console.log(err);
+
+    //   })
+
+  })
 });
 
 app.use(express.static("public"));
 
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
-require("./scrape");
 
 app.listen(PORT, function() {
   console.log("App listening on Port: " + PORT);

@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 
 
   const articlesSchema = new mongoose.Schema({
-    name: String
+    title: String
   });
 
-  const Article = mongoose.model("Article", articlesSchema);
+  const Article = mongoose.model("Articles", articlesSchema);
 
   module.exports = Article;
