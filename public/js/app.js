@@ -20,7 +20,10 @@ $(document).ready(function() {
         $.get("/show", data => {
             data.forEach( item => {
                 $("#listArticles").append(
-                    `<li class="list-group-item">${item}</li>`
+                    `<li class="list-group-item">
+                        <p>${item.title}</p>
+                        <a href="${item.url}">Go To Article</a>
+                    </li>`
                 )
             })
         })
