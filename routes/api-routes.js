@@ -7,6 +7,15 @@ module.exports = function (app) {
     app.get("/scrape", function (req, res) {
         console.log("scraper")
         scraper()
-        res.send("Good Job")
+        db.Article.find({}).then( articles => {
+            res.json(articles)
         })
+        })
+
+    app.get("/show", (req, res) => {
+        db.Article.find().then( articles => {
+            res.json(articles)
+        })
+    })
+        
     }

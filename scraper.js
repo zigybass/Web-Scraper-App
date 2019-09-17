@@ -2,8 +2,9 @@ const axios = require("axios");
 const Article = require("./models/Articles");
 const cheerio = require("cheerio");
 
-module.exports = function(app) {
-  axios.get("https://www.caranddriver.com/news/").then(data => {
+module.exports = function() {
+  
+    axios.get("https://www.caranddriver.com/news/").then(data => {
     const $ = cheerio.load(data.data);
     const titles = $(".item-title");
     $(".item-title").each(i => {
@@ -15,6 +16,7 @@ module.exports = function(app) {
         url: url
       });
       article.save(err => {
+        //   console.log("saved")
         if (err) return console.log(err);
       });
 

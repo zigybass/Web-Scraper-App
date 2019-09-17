@@ -1,8 +1,14 @@
 html {
     background: url("../austinMini.jpg");
     background-size: cover;
+    overflow: auto;
+    background-attachment: fixed;
     
     background-repeat: no-repeat;
+}
+
+#header {
+    margin: 10px;
 }
 
 .jumbotron-fluid {
@@ -12,4 +18,16 @@ html {
 
 #scrapedArticles {
     opacity: .6;
+}
+
+#scrapeAlert {
+    margin-top: 10px;
+}
+
+.list-group-item {
+    background-color: rgba(255, 255, 255, 0.137);
+}
+
+#articleDisplay {
+    float: right;
 }

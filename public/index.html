@@ -10,30 +10,34 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- jQuery -->
     <script
-        src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div class="col">
-                <div>
-                    <h2>Car and Drive Web Scraper</h2>
+                <div id="header">
+                    <h3>Car and Drive Web Scraper</h3>
                     <button id="scrapeBtn" type="button" class="btn btn-dark">Scrape Articles</button>
-                    <button type="button" class="btn btn-dark">Save Articles</button>
+                    <button id="showArticles" type="button" class="btn btn-dark">Show Articles</button>
+                        <div id="scrapeAlert" class="alert alert-info" role="alert">
+                            Articles Scraped!
+                          </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4"></div>
-            <div class="col-4">
+        <div id="articleDisplay" class="row">
+            <div>
                 <h3>Articles</h3>
+                <ul id="listArticles" class="list-group-flush"></ul>
             </div>
         </div>
     </div>
+
+
     <script src="../js/app.js"></script>
 </body>
 </html>
