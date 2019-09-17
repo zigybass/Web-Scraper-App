@@ -1,43 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Web Scraper Main</title>
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <!-- jQuery -->
     <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
 
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div id="header">
-                    <h3>Car and Drive Web Scraper</h3>
-                    <button id="scrapeBtn" type="button" class="btn btn-dark">Scrape Articles</button>
-                    <button id="showArticles" type="button" class="btn btn-dark">Show Articles</button>
-                        <div id="scrapeAlert" class="alert alert-info" role="alert">
-                            Articles Scraped!
-                          </div>
-                </div>
-            </div>
-        </div>
-        <div id="articleDisplay" class="row">
-            <div>
-                <h3>Articles</h3>
-                <ul id="listArticles" class="list-group-flush"></ul>
-            </div>
-        </div>
+    <div id="modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="form-group">
+                <label for="exampleFormControlTextarea1">Create a Note Here</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                <button type="submit" class="btn btn-primary mb-2">Save Note</button>
+              </div>
+      </div>
     </div>
 
+    <div class="container top">
+      <div class="row">
+        <div class="col">
+          <div id="header">
+            <h3>Car and Drive Web Scraper</h3>
+            <button id="scrapeBtn" type="button" class="btn btn-dark">
+              Scrape Articles
+            </button>
+            <button id="showArticles" type="button" class="btn btn-dark">
+              Show Articles
+            </button>
+            <div id="scrapeAlert" class="alert alert-info" role="alert">
+              Articles Scraped!
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div id="articleDisplay" class="row">
+        <div class="col-4 justify-content-end">
+          <h3>Articles</h3>
+          <ul id="listArticles" class="list-group-flush"></ul>
+        </div>
+      </div>
+    </div>
 
     <script src="../js/app.js"></script>
-</body>
+  </body>
 </html>
