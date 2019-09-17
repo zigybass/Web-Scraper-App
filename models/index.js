@@ -1,4 +1,8 @@
 'use strict';
 
-require(".articles/");
+module.exports = {
+
+    Article: require("./Articles")
+
+}
 

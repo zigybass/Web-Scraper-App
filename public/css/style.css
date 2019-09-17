@@ -1,0 +1,15 @@
+html {
+    background: url("../austinMini.jpg");
+    background-size: cover;
+    
+    background-repeat: no-repeat;
+}
+
+.jumbotron-fluid {
+    height: 0px;
+    color: rgb(43, 43, 43);
+}
+
+#scrapedArticles {
+    opacity: .6;
+}
