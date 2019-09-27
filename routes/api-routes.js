@@ -17,5 +17,12 @@ module.exports = function (app) {
             res.json(articles)
         })
     })
+
+    app.post("/saveArticle/:id", (req, res) => {
+        console.log(req.params)
+        db.Saved.insertMany(req.params).then( articles => {
+            res.json(articles)
+        })
+    })
         
     }

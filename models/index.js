@@ -2,7 +2,9 @@
 
 module.exports = {
 
-    Article: require("./Articles")
+    Article: require("./Articles"),
+    Saved: require("./Saved"),
+    Notes: require("./Notes")
 
 }
 
